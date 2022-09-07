@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CheckCircle, Circle, Trash } from "./Icons";
 
 interface TaskProps {
@@ -28,7 +28,7 @@ export function Task({
     checked ? onRemoveCompletedTask(content.id) : onCompleteTask(content.id);
   }
   return (
-    <article className="flex flex-row gap-3 p-4 items-start text-sm bg-gray-500 rounded">
+    <article className="flex flex-row gap-3 mob:p-4 pc:p-6 items-start text-sm bg-gray-500 rounded">
       <button onClick={handleCheckTask}>
         {checked ? <CheckCircle /> : <Circle />}
       </button>

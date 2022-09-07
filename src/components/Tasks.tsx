@@ -6,11 +6,9 @@ import { Counter } from "./Counter";
 import { Empty } from "./Empty";
 
 export function Tasks() {
-  const [tasks, setTasks] = useState([
-    { id: uuidv4(), title: "Organize seu dia!" },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [complete, setComplete] = useState(0);
 
   function handleCreateTask(event: FormEvent) {
@@ -44,7 +42,7 @@ export function Tasks() {
     <div className="max-w-[1024px] mx-auto">
       <section>
         <form
-          className="flex justify-center gap-2 pc:h-14 mob:h-10 mt-[-1.75rem] text-sm"
+          className="flex justify-center gap-2 pc:h-14 mob:h-12 mt-[-1.75rem] text-sm"
           onSubmit={handleCreateTask}
         >
           <input
