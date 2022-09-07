@@ -8,6 +8,10 @@ module.exports = {
       fontFamily: {
         sans: 'Inter, sans-serif',
       },
+      screens: {
+        mob: "100px",
+        pc: "1024px",
+      },
       colors: {
         purple: {
           300: '#8284FA',

@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="mob:px-4">
         <Tasks />
       </main>
     </div>
