@@ -6,7 +6,9 @@ import { Counter } from "./Counter";
 import { Empty } from "./Empty";
 
 export function Tasks() {
-  const [tasks, setTasks] = useState([{ id: uuidv4(), title: "Organize seu dia!"}]);
+  const [tasks, setTasks] = useState([
+    { id: uuidv4(), title: "Organize seu dia!" },
+  ]);
   const [newTask, setNewTask] = useState("");
   const [count, setCount] = useState(1);
   const [complete, setComplete] = useState(0);
@@ -21,6 +23,9 @@ export function Tasks() {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
       return task.id !== taskToDelete;
     });
+
+    setTasks(tasksWithoutDeletedOne);
+    setCount(count - 1);
   }
   function completeTask() {
     setComplete(complete + 1);
@@ -36,10 +41,10 @@ export function Tasks() {
     event.target.setCustomValidity("Este campo é obrigatório");
   }
   return (
-    <div className="max-w-[1024px] mx-auto">
+    <div className="max-w-[768px] mx-auto">
       <section>
         <form
-          className="flex justify-center gap-2 pc:h-14 mob:h-12 mt-[-1.75rem] text-sm"
+          className="flex justify-center gap-2 h-14 mt-[-1.75rem] text-sm"
           onSubmit={handleCreateTask}
         >
           <input
@@ -52,7 +57,7 @@ export function Tasks() {
             required
           />
           <button
-            className="flex items-center border-2 border-transparent justify-center gap-1 w-24 bg-blue-700 text-gray-100 rounded hover:bg-blue-500 transition-colors"
+            className="flex items-center justify-center gap-1 w-24 bg-blue-700 text-gray-100 rounded p-4 hover:bg-blue-500 transition-colors"
             type="submit"
           >
             <span>Criar</span>
