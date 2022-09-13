@@ -55,7 +55,7 @@ export function Tasks() {
             required
           />
           <button
-            className="flex items-center border border-transparent justify-center gap-1 w-24 bg-blue-700 text-gray-100 rounded hover:bg-blue-500 transition-colors"
+            className="flex items-center border-2 border-transparent justify-center gap-1 w-24 bg-blue-700 text-gray-100 rounded hover:bg-blue-500 transition-colors"
             type="submit"
           >
             <span>Criar</span>
