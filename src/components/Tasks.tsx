@@ -6,9 +6,9 @@ import { Counter } from "./Counter";
 import { Empty } from "./Empty";
 
 export function Tasks() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([{ id: uuidv4(), title: "Organize seu dia!"}]);
   const [newTask, setNewTask] = useState("");
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [complete, setComplete] = useState(0);
 
   function handleCreateTask(event: FormEvent) {
@@ -21,9 +21,6 @@ export function Tasks() {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
       return task.id !== taskToDelete;
     });
-
-    setTasks(tasksWithoutDeletedOne);
-    setCount(count - 1);
   }
   function completeTask() {
     setComplete(complete + 1);
